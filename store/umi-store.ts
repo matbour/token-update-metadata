@@ -8,8 +8,7 @@ import {
 } from "@metaplex-foundation/umi";
 import type { WalletAdapter } from "@solana/wallet-adapter-base";
 import { create } from "zustand";
-
-const DEFAULT_ENDPOINT = "https://api.mainnet-beta.solana.com";
+import { RPC_ENDPOINT } from "@/lib/constants";
 
 function createBaseUmi(endpoint: string) {
   return createUmi(endpoint)
@@ -29,7 +28,7 @@ interface UmiStore {
 }
 
 export const useUmiStore = create<UmiStore>((set) => ({
-  umi: createBaseUmi(DEFAULT_ENDPOINT),
+  umi: createBaseUmi(RPC_ENDPOINT),
   signer: null,
 
   updateSigner: (wallet: WalletAdapter) => {

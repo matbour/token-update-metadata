@@ -4,9 +4,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { type ReactNode, useState } from "react";
 import { AppWalletProvider } from "@/components/wallet-provider";
 import { UmiProvider } from "@/components/umi-provider";
-
-const ENDPOINT =
-  process.env.NEXT_PUBLIC_RPC_URL ?? "https://api.mainnet-beta.solana.com";
+import { RPC_ENDPOINT } from "@/lib/constants";
 
 export function Providers({ children }: { children: ReactNode }) {
   const [queryClient] = useState(
@@ -23,7 +21,7 @@ export function Providers({ children }: { children: ReactNode }) {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <AppWalletProvider endpoint={ENDPOINT}>
+      <AppWalletProvider endpoint={RPC_ENDPOINT}>
         <UmiProvider>{children}</UmiProvider>
       </AppWalletProvider>
     </QueryClientProvider>
