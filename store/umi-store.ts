@@ -9,7 +9,7 @@ import {
 import type { WalletAdapter } from "@solana/wallet-adapter-base";
 import { create } from "zustand";
 
-const DEFAULT_ENDPOINT = "https://api.devnet.solana.com";
+const DEFAULT_ENDPOINT = "https://api.mainnet-beta.solana.com";
 
 function createBaseUmi(endpoint: string) {
   return createUmi(endpoint)

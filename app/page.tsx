@@ -84,7 +84,7 @@ export default function Home() {
               Metadata updated successfully!
             </span>
             <a
-              href={`https://explorer.solana.com/tx/${txSignature}?cluster=devnet`}
+              href={`https://explorer.solana.com/tx/${txSignature}`}
               target="_blank"
               rel="noopener noreferrer"
               className="link link-primary text-sm break-all"

@@ -6,7 +6,7 @@ import { AppWalletProvider } from "@/components/wallet-provider";
 import { UmiProvider } from "@/components/umi-provider";
 
 const ENDPOINT =
-  process.env.NEXT_PUBLIC_RPC_URL ?? "https://api.devnet.solana.com";
+  process.env.NEXT_PUBLIC_RPC_URL ?? "https://api.mainnet-beta.solana.com";
 
 export function Providers({ children }: { children: ReactNode }) {
   const [queryClient] = useState(
